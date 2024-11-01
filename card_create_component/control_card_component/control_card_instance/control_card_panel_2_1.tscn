@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvsx784flvfdj"]
+
+[ext_resource type="Script" path="res://card_create_component/control_card_component/control_card_instance/control_card_panel_2_1.gd" id="1_5870k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv7bg"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evqmb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0xsc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a83py"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0)
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm7xc"]
+bg_color = Color(0, 0, 0, 0.290196)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swmgy"]
+bg_color = Color(0.988235, 0.262745, 0.666667, 0)
+
+[node name="ControlCardPanel" type="Panel"]
+custom_minimum_size = Vector2(200, 500)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv7bg")
+script = ExtResource("1_5870k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "设置"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "颜色模式 -->"
+
+[node name="color_pattern_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "音量 -->"
+
+[node name="SoundLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "音量"
+
+[node name="SoundHSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "语言 -->"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0xsc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a83py")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jm7xc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_swmgy")
+text = "English"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0xsc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a83py")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jm7xc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_swmgy")
+text = "中文"
+
+[node name="Panel4" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "存档文件和版本号 -->"
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "版本：v0.0.1"
+
+[node name="LoadFileLinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "存档文件点我"

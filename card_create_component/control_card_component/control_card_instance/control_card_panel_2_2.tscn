@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx13lupabfphe"]
+
+[ext_resource type="Script" path="res://card_create_component/control_card_component/control_card_instance/control_card_panel_2_2.gd" id="1_t34b2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv7bg"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evqmb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_6batu"]
+variation_embolden = -0.5
+variation_transform = Transform2D(1, 0.3, 0, 1, 0, 0)
+
+[node name="ControlCardPanel" type="Panel"]
+custom_minimum_size = Vector2(200, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv7bg")
+script = ExtResource("1_t34b2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "作者信息"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6batu")
+text = "大家好，我是这个桌面应用的作者，这个应用是我的一个Godot GUI练习项目。项目源文件已经放在我的Github页面上，请自行查阅。"
+autowrap_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Github.site"
+uri = "https://github.com/"

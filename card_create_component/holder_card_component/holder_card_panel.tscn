@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://be6yx2md822ih"]
+
+[ext_resource type="Script" path="res://card_create_component/holder_card_component/holder_card_panel.gd" id="1_f4sbh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0poh"]
+bg_color = Color(0.341176, 0.654902, 0.709804, 0)
+expand_margin_top = 60.0
+
+[node name="HolderCardPanel" type="Panel"]
+custom_minimum_size = Vector2(0, 10)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0poh")
+script = ExtResource("1_f4sbh")

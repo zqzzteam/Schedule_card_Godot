@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq1tlgbcyltnh"]
+
+[ext_resource type="Script" path="res://card_create_component/control_card_component/control_card_instance/control_card_panel_2_0.gd" id="1_7oawu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv7bg"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0xsc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a83py"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0)
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm7xc"]
+bg_color = Color(0, 0, 0, 0.290196)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swmgy"]
+bg_color = Color(0.988235, 0.262745, 0.666667, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evqmb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="ControlCardPanel" type="Panel"]
+custom_minimum_size = Vector2(200, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv7bg")
+script = ExtResource("1_7oawu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="To_Main_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0xsc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a83py")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jm7xc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_swmgy")
+text = "返回"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")

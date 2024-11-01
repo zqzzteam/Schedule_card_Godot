@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvdkd4gjcml0g"]
+
+[ext_resource type="Script" path="res://card_create_component/control_card_component/control_card_instance/control_card_panel_1_0.gd" id="1_te3tb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv7bg"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdq6s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0jba"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0)
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64uom"]
+bg_color = Color(0, 0, 0, 0.290196)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljeew"]
+bg_color = Color(0.988235, 0.262745, 0.666667, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evqmb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="ControlCardPanel" type="Panel"]
+custom_minimum_size = Vector2(200, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv7bg")
+script = ExtResource("1_te3tb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="To_EditCard_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdq6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0jba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64uom")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ljeew")
+text = "编辑卡片"
+
+[node name="To_Setting_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdq6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0jba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64uom")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ljeew")
+text = "设置"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqmb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Minimize_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdq6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0jba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64uom")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ljeew")
+text = "最小化"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdq6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0jba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64uom")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ljeew")
+text = "退出"
